@@ -12,4 +12,4 @@ def apply_discount(kopecks: int, percent: int) -> int:
     """Цена со скидкой в процентах. Копейки округляются по правилам арифметики."""
     if not 0 <= percent <= 100:
         raise ValueError("discount must be between 0 and 100 percent")
-    return int(kopecks * (100 - percent) / 100)
+    return (kopecks * (100 - percent) + 50) // 100
