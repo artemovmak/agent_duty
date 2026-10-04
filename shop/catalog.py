@@ -20,7 +20,7 @@ def normalize(text: str) -> str:
 def search(query: str) -> list[str]:
     """Артикулы товаров, в названии которых встречается запрос."""
     q = normalize(query.strip())
-    return [sku for sku, (name, _, _) in PRODUCTS.items() if q in name.lower()]
+    return [sku for sku, (name, _, _) in PRODUCTS.items() if q in normalize(name)]
 
 
 def price(sku: str) -> int:
