@@ -37,7 +37,7 @@ class Cart:
         """Доставка бесплатная от FREE_DELIVERY_FROM копеек за товары с учётом скидки."""
         if not self.items:
             return 0
-        return 0 if self.goods_total() > FREE_DELIVERY_FROM else DELIVERY_PRICE
+        return 0 if self.goods_total() >= FREE_DELIVERY_FROM else DELIVERY_PRICE
 
     def total(self) -> int:
         return self.goods_total() + self.delivery()
