@@ -22,6 +22,7 @@ class Cart:
         self.items.pop(sku, None)
 
     def apply_promo(self, code: str) -> None:
+        code = code.strip().upper()
         if code not in PROMO_CODES:
             raise ValueError("unknown promo code")
         self.promo = code
