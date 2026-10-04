@@ -10,6 +10,7 @@ def ship_date(ordered_at: datetime) -> date:
     day = ordered_at.date()
     if ordered_at.hour >= CUTOFF_HOUR:
         day += timedelta(days=1)
-    if day.weekday() == 6:
+    # Пропускаем субботу (5) и воскресенье (6)
+    while day.weekday() >= 5:
         day += timedelta(days=1)
     return day
